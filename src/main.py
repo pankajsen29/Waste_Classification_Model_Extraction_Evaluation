@@ -31,3 +31,8 @@ with open(Path(TARGET_OUTPUT_FILE), "w", encoding="utf-8") as target_out_file:
 
 print(f"\nTarget query results is stored in {Path(TARGET_OUTPUT_FILE)}")
 print(f"\nSurrogate query results is stored in {Path(SURROGATE_OUTPUT_FILE)}")           
+
+################ Step 2: performs evaluation ##########
+from src.evaluate import evaluate_extraction
+
+evaluate_extraction(Path(TARGET_OUTPUT_FILE), Path(SURROGATE_OUTPUT_FILE))
